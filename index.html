@@ -157,7 +157,7 @@
   <!-- End teaser video -->
 
   <!-- Paper abstract -->
-  <!--
+
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -165,15 +165,57 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            The field of Embodied AI predominantly relies on simulation for training and evaluation, often using either fully synthetic environments that lack photorealism or high-fidelity real-world reconstructions captured with expensive hardware. As a result, sim-to-real transfer remains a major challenge. In this paper, we introduce EmbodiedSplat, a novel approach that personalizes policy training by efficiently capturing the deployment environment and fine-tuning policies within the reconstructed scenes. Our method leverages 3D Gaussian Splatting (GS) and the Habitat-Sim simulator to bridge the gap between realistic scene capture and effective training environments. Using iPhone-captured deployment scenes, we reconstruct meshes via GS, enabling training in settings that closely approximate real-world conditions. We conduct a comprehensive analysis of training strategies, pre-training datasets, and mesh reconstruction techniques, evaluating their impact on sim-to-real predictivity in real-world scenarios. Experimental results demonstrate that agents fine-tuned with EmbodiedSplat outperform both zero-shot baselines pre-trained on large-scale real-world datasets (HM3D) and synthetically generated datasets (HSSD), achieving absolute success rate improvements of 20% and 40% on real-world Image Navigation task. Moreover, our approach yields a high sim-vs-real correlation (0.87–0.97) for the reconstructed meshes, underscoring its effectiveness in adapting policies to diverse environments with minimal effort.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
--->
+
   <!-- End paper abstract -->
+
+  <!-- EmbodiedSplat Pipeline -->
+<section class="hero is-small">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">The EmbodiedSplat Pipeline</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/EmbodiedSplat_Architecture.png" alt="EmbodiedSplat Pipeline" class="is-centered">
+          <p>
+            The EmbodiedSplat Pipeline involves capturing University scenes using <a href="https://poly.cam">Polycam</a> and <a href="https://docs.nerf.studio">Nerfstudio</a> which produces RGB frames, associated iPhone GT depth maps, and poses. <a href="https://maturk.github.io/dn-splatter/">DN-Splatter</a> is used to train Gaussian Splatting using depth and normal regularization. Meshes are extracted through Poisson Reconstruction from the trained gaussians and are processed and loaded into <a href="https://aihabitat.org">Habitat-Sim</a> for agent training in simulation. The trained policies are deployed in the same real-world scenes for image-goal navigation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- End EmbodiedSplat Pipeline -->
+
+
+    <!-- Conclusion -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we introduced a comprehensive pipeline for bridging the gap between real-world and simulated environments in training embodied agents using 3D Gaussian Splats (GS) and Polycam. By leveraging the <a href="https://xuqianren.github.io/publications/MuSHRoom/">MuSHRoom</a> dataset and custom iPhone-captured scenes, we demonstrated an efficient and scalable approach to policy personalization, leveraging 3D scene reconstruction from low-effort collects, enabling high-quality training for the ImageNav task. Our pipeline facilitates accessible and replicable scene collection without requiring specialized hardware or significant costs, making it a practical solution for large-scale embodied AI research.
+We evaluated overfitted, zero-shot, and fine-tuned policies, showing that fine-tuning pre-trained policies on real-world scene reconstructions improves sim-to-real transfer. We also analyzed the differences between GS-generated DN meshes and POLYCAM meshes, finding that POLYCAM more closely resemble real-world scenes.
+
+This work lays the foundation for seamlessly integrating real-world scene captures into simulation, expanding the applicability of embodied AI systems. Another promising avenue is integrating GS directly into training, replacing visual observations and goal images to enhance learning efficiency. Furthermore, we aim to extend the use of Gaussian Splats to more complex embodied AI tasks, such as rearrangement and mobile manipulation, broadening its impact across diverse real-world applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- End Conclusion -->
 
 
   <!-- Image carousel -->
@@ -305,11 +347,11 @@
   </section>
 -->
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop content">
       Coming Soon!
     </div>
-  </section>
+  </section> -->
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
