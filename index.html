@@ -54,7 +54,7 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with
               Gaussian Splats from a Mobile Device</h1>
-            <h3 class="title is-2">ICCV 2025</h3>
+            <h3 class="title is-3 publication-venue">ICCV 2025</h3>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -194,6 +194,37 @@
 
   <!-- End EmbodiedSplat Pipeline -->
 
+
+  <!-- Section for Dataset -->
+
+  <!-- End of Dataset -->
+
+
+    <!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="zero-shot" class="carousel results-carousel">
+       <div class="item">
+
+        <img src="static/images/zero_shot_results_combined_scenes_hm3d.png" alt="HM3D zero-shot results"/>
+        <h2 class="subtitle has-text-centered">
+          The results of zero-shot evaluation across individual scenes for the HM3D pre-trained policy. The policy demonstrates relatively high success rates in smaller scenes, such as conf_a and conf_b. However, it struggles in larger environments such as classroom and lounge, which are more complex and differ more significantly from the training data. The policy performs generally equally well in both DN and Polycam meshes, yielding similar success rates (~60%). Three MuSHRoom scenes are included in the evaluation. Having no Polycam meshes, we conduct evaluations on DN meshes only. Again, performances in sauna and honka are better than that in activity, suggesting that the policy is more effective in smaller, less complex environments. 
+        </h2>
+      </div>
+      <div class="item">
+
+        <img src="static/images/zero_shot_results_combined_scenes_hssd.png" alt="HSSD zero-shot results"/>
+        <h2 class="subtitle has-text-centered">
+          The results of zero-shot evaluation across individual scenes for the HSSD pre-trained policy. The policy reveals similar trend as the HM3D pre-trained policy, though with significantly lower success rates overall. This degradation in performance can be attributed to the synthetic nature of HSSD scenes, which lack the realism and scale necessary for effective generalization. And the performances on DN and Polycam meshes are still comparable.
+        </h2>
+      </div>
+      <div class="item">
+  </div>
+</div>
+</div>
+</section>
+  <!-- End image carousel -->
 
     <!-- Conclusion -->
 
