@@ -300,6 +300,54 @@
 
   <!-- End Real world results -->
 
+        <!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Ablations and Analysis</h2>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+      <div id="results-carousel" class="carousel results-carousel" style="width: 960px;">
+       <div class="item">
+        <img src="static/images/overfitted_combined_scenes_barchart.png" alt="Overfitted Results on all scenes"/>
+        <h2 class="subtitle has-text-centered">
+          We investigate the necessity of pretraining on large scale datasets by overfitting policies directly on POLYCAM and DN meshes with a policy trained from scratch (not pre-trained on large-scale datasets such as HM3D or HSSD) for 300M steps. As expected, the overfitted policies achieve near-perfect performance in simulation, maintaining high success rates. We further evaluate these overfitted policies in the real- world lounge scene using POLYCAM and DN meshes. Surprisingly, the overfitted policy trained on the POLYCAM mesh achieves a 50% success rate in real-world evaluations. In contrast, the policy trained on the DN mesh achieves only 10% success. This result suggests that our mesh-based training approach can yield non-zero real-world perfor- mance, even without large-scale pre-training. We attribute the performance gap between POLYCAM and DN-trained policies to differences in visual fidelity—POLYCAM meshes preserve more visual detail by directly utilizing original im- ages to reconstruct the scene, whereas DN meshes are based on GS which use the learned colors for the 3D Gaussians. 
+        </h2>
+      </div>
+
+      <div class="item">
+
+        <img src="static/images/combined_plot.png" alt="correlation between zero-shot success rates with PSNR and average distance to goal"/>
+        <h2 class="subtitle has-text-centered">
+          We illustrate the correlation between zero-shot validation success rates on DN meshes and two key factors: the Peak Signal-to-Noise Ratio (PSNR) of the corresponding 3D Gaussian Splats (GS) and the scale of the scene, measured as the average shortest distance between start-goal locations in validation episodes. We observe a negative correlation between success rate (SR) and average shortest distance—indicating that as the scale of the scene increases, the zero-shot success rate declines. Conversely, a positive correlation is seen between SR and PSNR, where higher validation PSNR values correspond to improved success rates. Notably, different trend lines emerge for MuSHRoom captures and our own Captured scenes. MuSHRoom captures generally exhibit higher validation PSNRs, likely due to the use of a stabilized gimbal during data collection.
+        </h2>
+      </div>
+
+      <div class="item">
+
+        <img src="static/images/zero_shot_success_rate_line_chart_hm3d.png" alt="HM3D zero-shot success rate"/>
+        <h2 class="subtitle has-text-centered">
+          We present average zero-shot success rates across HM3D validation set, POLYCAM meshes, and DN meshes at various stages of HM3D policy pre-training. This analysis aims to determine whether continuous performance improvements on HM3D validation scenes translate to improved zero-shot performance on our Captured scenes. We observe that while performance initially increases, it begins to deteriorate or plateau at approximately 400M steps, despite continued improvements on HM3D validation scenes.
+        </h2>
+      </div>
+
+      <div class="item">
+
+        <img src="static/images/zero_shot_success_rate_line_chart_hssd.png" alt="HSSD zero-shot success rate"/>
+        <h2 class="subtitle has-text-centered">
+          We show a similar experiment conducted using the HSSD dataset. Up to 300M steps, improvements in HSSD validation performance correspond to slight improvements in zero-shot performance on our Captured scenes. However, performance plateaus for Captured, showing no further gains despite continued improvement on HSSD validation scenes. For HM3D pre-training, POLYCAM meshes outperform DN meshes in success rates, while for HSSD, the trend reverses slightly, highlighting the impact of pre-training dataset characteristics on zero-shot generalization.
+        </h2>
+      </div>
+      </div>
+     </div>
+  </div>
+</div>
+</div>
+</section>
+  <!-- End image carousel -->
+
     <!-- Conclusion -->
 
 <section class="section hero is-light">
