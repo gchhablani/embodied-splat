@@ -250,6 +250,56 @@
 </section>
   <!-- End image carousel -->
 
+      <!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Fine-tuned Evaluation Results</h2>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+      <div id="results-carousel" class="carousel results-carousel" style="width: 960px;">
+       <div class="item">
+        <img src="static/images/finetune_results_all_scenes_hm3d.png" alt="HM3D fine-tuned results"/>
+        <h2 class="subtitle has-text-centered">
+          We fine-tune the pre-trained policy on the training episodes for a single scene and evaluate on the corresponding validation episodes. We observe that fine-tuning significantly improves performance across all tested scenes. For the pre-trained HM3D policy, fine-tuning for 20M steps results in success rates approaching 90%+ across different meshes.
+        </h2>
+      </div>
+      <div class="item">
+
+        <img src="static/images/finetune_results_all_scenes_hssd.png" alt="HSSD fine-tuned results"/>
+        <h2 class="subtitle has-text-centered">
+          Similarly, for the HSSD pre-trained policy, fine-tuning leads to substantial improvements, with most policies achieving success rates of 80%+ in respective scenes. In particular, performance gains are particularly pronounced in larger, more complex environments such as classroom and lounge, which differ significantly from apartment-style scenes in HM3D and HSSD.
+        </h2>
+      </div>
+      </div>
+     </div>
+  </div>
+</div>
+</div>
+</section>
+  <!-- End image carousel -->
+
+    <!-- Real world results -->
+<section class="section hero is-small">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real World Performance</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/real_world_performance_results.png" alt="Real World Performance Results" class="is-centered">
+          <p>
+            We evaluate both zero-shot and fine-tuned policies in the real-world lounge scene on a Stretch robot. During the evaluation, each episode is capped at 100 steps, with 10 distinct start-and-goal locations sampled within the scene. To assess performance, we record the number of steps taken to reach the goal and the final distance to the goal at the end of each episode, determining whether the agent successfully completes the task. The zero-shot HM3D policy achieves a 50% success rate, demonstrating our hypothesized lack of generalization. We attribute this to the structural and semantic differences betweeen the lounge and the apartment-style scenes typically encountered in the HM3D dataset. Fine-tuning on the POLYCAM and DN mesh reconstructions of this scene improves performance, with success rates increasing to 70%. For HSSD, zero-shot performance is significantly lower at 10%, while fine-tuned policies improve success rates to 50% with POLYCAM and 40% with DN mesh. The improvements in evaluation performance on DN and POLYCAM meshes in simulation translate to improved real-world performance. This demonstrates that our approach can efficiently adapt policies to novel real-world environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- End Real world results -->
+
     <!-- Conclusion -->
 
 <section class="section hero is-light">
