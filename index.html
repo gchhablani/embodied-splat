@@ -225,22 +225,20 @@
             
             <div class="column is-half">
               <h3 class="title is-5">"lounge"</h3>
-              <model-viewer src="static/meshes/grad_lounge_polycam_mesh.glb"
-                            alt="Lounge Mesh"
-                            camera-controls auto-rotate
-                            shadow-intensity="0.8"
-                            style="width:100%; height:300px;">
-              </model-viewer>
+              <img src="static/images/grad.png"
+                   alt="Lounge Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="loadMesh('viewer-lounge', 'static/meshes/grad_lounge_polycam_mesh.glb')">
+            <div id="viewer-lounge" style="margin-top:1rem;"></div>
             </div>
 
             <div class="column is-half">
               <h3 class="title is-5">"classroom"</h3>
-              <model-viewer src="static/meshes/clough_classroom_polycam_mesh.glb"
-                            alt="Classroom Mesh"
-                            camera-controls auto-rotate
-                            shadow-intensity="0.8"
-                            style="width:100%; height:300px;">
-              </model-viewer>
+              <img src="static/images/classroom.png"
+                   alt="Classroom Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="loadMesh('viewer-classroom', 'static/meshes/clough_classroom_polycam_mesh.glb')">
+              <div id="viewer-classroom" style="margin-top:1rem;"></div>
             </div>
 
           </div>
@@ -248,22 +246,20 @@
             
             <div class="column is-half">
               <h3 class="title is-5">"conf a"</h3>
-              <model-viewer src="static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb"
-                            alt="Conf a mesh"
-                            camera-controls auto-rotate
-                            shadow-intensity="0.8"
-                            style="width:100%; height:300px;">
-              </model-viewer>
+              <img src="static/images/conf a.png"
+                   alt="Conf a Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="loadMesh('viewer-conf-a', 'static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb')">
+              <div id="viewer-conf-a" style="margin-top:1rem;"></div>
             </div>
 
             <div class="column is-half">
               <h3 class="title is-5">"conf b"</h3>
-              <model-viewer src="static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb"
-                            alt="Conf b Mesh"
-                            camera-controls auto-rotate
-                            shadow-intensity="0.8"
-                            style="width:100%; height:300px;">
-              </model-viewer>
+              <img src="static/images/conf b.png"
+                   alt="Conf b Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="loadMesh('viewer-conf-b', 'static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb')">
+              <div id="viewer-conf-b" style="margin-top:1rem;"></div>
             </div>
 
           </div>
@@ -593,6 +589,22 @@ This work lays the foundation for seamlessly integrating real-world scene captur
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
   <!-- End of Statcounter Code -->
+
+<script type="module">
+  function loadMesh(containerId, src) {
+    const container = document.getElementById(containerId);
+    // Only insert once
+    if (container.innerHTML) return;
+    container.innerHTML = `
+      <model-viewer src="${src}"
+                    alt="Interactive Mesh"
+                    camera-controls auto-rotate
+                    shadow-intensity="0.8"
+                    style="width:100%; height:300px; border:1px solid #ccc; border-radius:8px;">
+      </model-viewer>
+    `;
+  }
+</script>
 
 </body>
 
