@@ -219,6 +219,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Our Dataset</h2>
+        <p style="margin-bottom:1rem; color:#555; font-size:16px; font-style:italic;">
+          Click the previews below to toggle interactive 3D meshes (click again to close).
+        </p>
         <div class="content has-text-justified">
           <!-- <img src="static/images/dataset.png" alt="Reconstructed meshes of the Captured scenes" class="is-centered"> -->
 <div class="columns is-multiline is-centered">
@@ -228,7 +231,7 @@
               <img src="static/images/grad.png"
                    alt="Lounge Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="loadMesh('viewer-lounge', 'static/meshes/grad_lounge_polycam_mesh.glb')">
+                   onclick="toggleMesh('viewer-lounge', 'static/meshes/grad_lounge_polycam_mesh.glb')">
             <div id="viewer-lounge" style="margin-top:1rem;"></div>
             </div>
 
@@ -237,7 +240,7 @@
               <img src="static/images/classroom.png"
                    alt="Classroom Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="loadMesh('viewer-classroom', 'static/meshes/clough_classroom_polycam_mesh.glb')">
+                   onclick="toggleMesh('viewer-classroom', 'static/meshes/clough_classroom_polycam_mesh.glb')">
               <div id="viewer-classroom" style="margin-top:1rem;"></div>
             </div>
 
@@ -249,7 +252,7 @@
               <img src="static/images/conf a.png"
                    alt="Conf a Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="loadMesh('viewer-conf-a', 'static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb')">
+                   onclick="toggleMesh('viewer-conf-a', 'static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb')">
               <div id="viewer-conf-a" style="margin-top:1rem;"></div>
             </div>
 
@@ -258,7 +261,7 @@
               <img src="static/images/conf b.png"
                    alt="Conf b Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="loadMesh('viewer-conf-b', 'static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb')">
+                   onclick="toggleMesh('viewer-conf-b', 'static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb')">
               <div id="viewer-conf-b" style="margin-top:1rem;"></div>
             </div>
 
