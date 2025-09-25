@@ -19,3 +19,19 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+function loadMesh(containerId, src) {
+  const container = document.getElementById(containerId);
+  if (container.innerHTML) return; // already loaded
+  container.innerHTML = `
+    <model-viewer src="${src}"
+                  alt="Interactive Mesh"
+                  camera-controls auto-rotate
+                  shadow-intensity="0.8"
+                  style="width:100%; height:300px; border:1px solid #ccc; border-radius:8px;">
+    </model-viewer>
+  `;
+}
+
+// expose it globally so onclick in HTML works
+window.loadMesh = loadMesh;
