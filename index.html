@@ -221,15 +221,29 @@
         <h2 class="title is-3">Our Dataset</h2>
         <div class="content has-text-justified">
           <!-- <img src="static/images/dataset.png" alt="Reconstructed meshes of the Captured scenes" class="is-centered"> -->
-          <h3 class="title is-4">Classroom</h3>
-          <model-viewer src="static/meshes/clough_classroom_polycam_mesh.glb" alt="Classroom Mesh"
-                        camera-controls auto-rotate shadow-intensity="0.8"
-                        style="width:100%; height:500px; border:1px solid #ccc; border-radius:10px;">
-          </model-viewer>
-          <h3 class="title is-4">Lounge</h3>
-          <model-viewer src="static/meshes/grad_lounge_polycam_mesh.glb" alt="Lounge Mesh"
-                        camera-controls auto-rotate shadow-intensity="0.8"
-                        style="width:100%; height:500px; border:1px solid #ccc; border-radius:10px;">
+<div class="columns is-multiline is-centered">
+            
+            <div class="column is-half">
+              <h3 class="title is-5">Lounge</h3>
+              <model-viewer src="static/meshes/grad_lounge_polycam_mesh.glb"
+                            alt="Lounge Mesh"
+                            camera-controls auto-rotate
+                            shadow-intensity="0.8"
+                            style="width:100%; height:300px;">
+              </model-viewer>
+            </div>
+
+            <div class="column is-half">
+              <h3 class="title is-5">Classroom</h3>
+              <model-viewer src="static/meshes/clough_classroom_polycam_mesh.glb"
+                            alt="Classroom Mesh"
+                            camera-controls auto-rotate
+                            shadow-intensity="0.8"
+                            style="width:100%; height:300px;">
+              </model-viewer>
+            </div>
+
+          </div>
           </model-viewer>
           <p>
             We capture scenes from a university environment (classroom, community lounges, conference rooms, etc). For custom data collection, we use an iPhone 13 Pro Max to record the iPhone RGB-D data using the <a href="https://poly.cam">Polycam</a>. Subsequently, we use <a href="https://docs.nerf.studio">Nerfstudio</a> to process the RGB-D data and sample 1000 aligned RGB-depth frames with low blur scores and corresponding poses. Each capture requires 20-30 minutes of recording with Polycam. We repeat this process for different indoor scenes, such as lounge, classroom, conf_a, and conf_b. For mesh reconstruction, we use <a href="https://maturk.github.io/dn-splatter/">DN-Splatter</a> as our method of choice for its superior performance on mesh reconstruction in comparison to others, and simplicity of its integration with <a href="https://aihabitat.org">Habitat-Sim</a>. DN-Splatter leverages depth-normal regularization, and smoothness losses to maintain geometric consistency during Gaussian Splat training. After training GS and converting into ply meshes, we convert the meshes to glb in Blender. The final meshes are shown above.
