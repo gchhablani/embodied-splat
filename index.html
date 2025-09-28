@@ -128,6 +128,16 @@
                     <span>arXiv</span>
                   </a>
                 </span>
+                <!-- Crowdsourcing contribution link -->
+                <span class="link-block">
+                  <a href="https://yebyyy.github.io/campus3d/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-users"></i>
+                    </span>
+                    <span>Contribute</span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -222,26 +232,26 @@
         <p style="margin-bottom:1rem; color:#555; font-size:16px; font-style:italic;">
           Click the previews below to toggle interactive 3D meshes (click again to close).
         </p>
+        <h3 class="title is-4 mt-8 mb-4">DN-Splatter Meshes</h3>
         <div class="content has-text-justified">
           <!-- <img src="static/images/dataset.png" alt="Reconstructed meshes of the Captured scenes" class="is-centered"> -->
 <div class="columns is-multiline is-centered">
-            
             <div class="column is-half">
               <h3 class="title is-5">"lounge"</h3>
-              <img src="static/images/grad.png"
+              <img src="static/images/lounge_dn.png"
                    alt="Lounge Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="toggleMesh('viewer-lounge', 'static/meshes/grad_lounge_polycam_mesh.glb')">
-            <div id="viewer-lounge" style="margin-top:1rem;"></div>
+                   onclick="toggleMesh('viewer-lounge-dn', 'static/meshes/grad_lounge_metric3d_v2_mono_normal_gt_depth.glb')">
+            <div id="viewer-lounge-dn" style="margin-top:1rem;"></div>
             </div>
 
             <div class="column is-half">
               <h3 class="title is-5">"classroom"</h3>
-              <img src="static/images/classroom.png"
+              <img src="static/images/classroom_dn.png"
                    alt="Classroom Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="toggleMesh('viewer-classroom', 'static/meshes/clough_classroom_polycam_mesh.glb')">
-              <div id="viewer-classroom" style="margin-top:1rem;"></div>
+                   onclick="toggleMesh('viewer-classroom-dn', 'static/meshes/clough_classroom_metric3d_v2_mono_normal_gt_depth.glb')">
+              <div id="viewer-classroom-dn" style="margin-top:1rem;"></div>
             </div>
 
           </div>
@@ -249,22 +259,64 @@
             
             <div class="column is-half">
               <h3 class="title is-5">"conf a"</h3>
-              <img src="static/images/conf a.png"
+              <img src="static/images/conf_a_dn.png"
                    alt="Conf a Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="toggleMesh('viewer-conf-a', 'static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb')">
-              <div id="viewer-conf-a" style="margin-top:1rem;"></div>
+                   onclick="toggleMesh('viewer-conf-a-dn', 'static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb')">
+              <div id="viewer-conf-a-dn" style="margin-top:1rem;"></div>
             </div>
 
             <div class="column is-half">
               <h3 class="title is-5">"conf b"</h3>
-              <img src="static/images/conf b.png"
+              <img src="static/images/conf_b_dn.png"
                    alt="Conf b Mesh Preview"
                    style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
-                   onclick="toggleMesh('viewer-conf-b', 'static/meshes/piedmont_metric3d_v2_mono_normal_gt_depth.glb')">
-              <div id="viewer-conf-b" style="margin-top:1rem;"></div>
+                   onclick="toggleMesh('viewer-conf-b-dn', 'static/meshes/castleberry_metric3d_v2_mono_normal_gt_depth.glb')">
+              <div id="viewer-conf-b-dn" style="margin-top:1rem;"></div>
+            </div>
+            <h3 class="title is-4 mt-8 mb-4">Polycam Meshes</h3>
+            <div class="content has-text-justified">
+          <!-- <img src="static/images/dataset.png" alt="Reconstructed meshes of the Captured scenes" class="is-centered"> -->
+<div class="columns is-multiline is-centered">
+            <div class="column is-half">
+              <h3 class="title is-5">"lounge"</h3>
+              <img src="static/images/lounge_poly.png"
+                   alt="Lounge Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="toggleMesh('viewer-lounge-poly', 'static/meshes/grad_lounge_polycam_mesh.glb')">
+            <div id="viewer-lounge-poly" style="margin-top:1rem;"></div>
             </div>
 
+            <div class="column is-half">
+              <h3 class="title is-5">"classroom"</h3>
+              <img src="static/images/classroom_poly.png"
+                   alt="Classroom Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="toggleMesh('viewer-classroom-poly', 'static/meshes/clough_classroom_polycam_mesh.glb')">
+              <div id="viewer-classroom-poly" style="margin-top:1rem;"></div>
+            </div>
+
+          </div>
+          <div class="columns is-multiline is-centered">
+            
+            <div class="column is-half">
+              <h3 class="title is-5">"conf a"</h3>
+              <img src="static/images/conf_a_poly.png"
+                   alt="Conf a Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="toggleMesh('viewer-conf-a-poly', 'static/meshes/piedmont_polycam_mesh.glb')">
+              <div id="viewer-conf-a-poly" style="margin-top:1rem;"></div>
+            </div>
+
+            <div class="column is-half">
+              <h3 class="title is-5">"conf b"</h3>
+              <img src="static/images/conf_b_poly.png"
+                   alt="Conf b Mesh Preview"
+                   style="width:100%; height:300px; object-fit:cover; cursor:pointer; border:1px solid #ccc; border-radius:8px;"
+                   onclick="toggleMesh('viewer-conf-b-poly', 'static/meshes/castleberry_polycam_mesh.glb')">
+              <div id="viewer-conf-b-poly" style="margin-top:1rem;"></div>
+            </div>
+          </div>
           </div>
           <p>
             We capture scenes from a university environment (classroom, community lounges, conference rooms, etc). For custom data collection, we use an iPhone 13 Pro Max to record the iPhone RGB-D data using the <a href="https://poly.cam">Polycam</a>. Subsequently, we use <a href="https://docs.nerf.studio">Nerfstudio</a> to process the RGB-D data and sample 1000 aligned RGB-depth frames with low blur scores and corresponding poses. Each capture requires 20-30 minutes of recording with Polycam. We repeat this process for different indoor scenes, such as lounge, classroom, conf_a, and conf_b. For mesh reconstruction, we use <a href="https://maturk.github.io/dn-splatter/">DN-Splatter</a> as our method of choice for its superior performance on mesh reconstruction in comparison to others, and simplicity of its integration with <a href="https://aihabitat.org">Habitat-Sim</a>. DN-Splatter leverages depth-normal regularization, and smoothness losses to maintain geometric consistency during Gaussian Splat training. After training GS and converting into ply meshes, we convert the meshes to glb in Blender. The final meshes are shown above.
